@@ -6,6 +6,21 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+
+    firebase: {
+      apiKey: 'AIzaSyA-1L7vV4C0e8xz_FO4FolI6IHyYxmn9mM',
+      authDomain: 'builder-c7a9a.firebaseapp.com',
+      databaseURL: 'https://builder-c7a9a.firebaseio.com',
+      storageBucket: 'YOUR-FIREBASE-APP.appspot.com',
+      messagingSenderId: '687366387329',
+    },
+
+    // if using ember-cli-content-security-policy
+    contentSecurityPolicy: {
+      'script-src': "'self' 'unsafe-eval' apis.google.com",
+      'frame-src': "'self' https://*.firebaseapp.com",
+      'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -13,14 +28,14 @@ module.exports = function(environment) {
       },
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
-        Date: false
-      }
+        Date: false,
+      },
     },
 
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
   };
 
   if (environment === 'development') {
